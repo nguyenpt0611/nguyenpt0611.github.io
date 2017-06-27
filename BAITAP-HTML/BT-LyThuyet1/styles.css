@@ -36,15 +36,14 @@ a {
  	width: 100px;
  	height: 90px;
 }
-
 .container #information .player-profile-content {
   	overflow:scroll;
   	height:  100%;
 }
 /* Player-profile CSS */
 .container #title-facts {
-  font-size: 17px;
-  margin-left: 5px;
+  	font-size: 17px;
+  	margin-left: 5px;
 }
 .container .facts {
 	padding-left: 40px;
