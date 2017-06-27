@@ -116,7 +116,7 @@ a {
 
 }
 .container #comment-form .row .form-comment-text input[type="text"] {
-	padding: 4px;
+	padding: 100px;
 }
 .container #comment-form .row .form-comment-text #comment_label{
 	font-family: Georgia, 'Times New Roman', Times, serif;
