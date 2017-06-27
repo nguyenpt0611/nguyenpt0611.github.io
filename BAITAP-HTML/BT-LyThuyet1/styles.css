@@ -38,6 +38,7 @@ a {
 }
 .container #information .player-profile-content {
   	overflow:scroll;
+	clear: right;
   	height:  100%;
 }
 /* Player-profile CSS */
