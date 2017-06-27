@@ -115,9 +115,8 @@ a {
 	margin-top: -42px;
 
 }
-.container #comment-form .row .form-comment-text input[type="text"] {
+.container #comment-form .row .form-comment-text textarea[type="text"] {
 	padding: 4px;
-	color: green;
 }
 .container #comment-form .row .form-comment-text #comment_label{
 	font-family: Georgia, 'Times New Roman', Times, serif;
