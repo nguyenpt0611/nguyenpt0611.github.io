@@ -67,12 +67,12 @@ h2 {
 	width: 220px;
 	height: 107px;
 	float: left;
-	padding: 25px 10px 15px 10px;
+	padding: 25px 5px 15px 10px;
 }
 #container #ports .item .no {
 	position: absolute;
 	padding-top: 27px;
-	margin-left: -43px;
+	margin-left: -38px;
 }
 /*info-contact CSS*/
 #container #info-contact {
@@ -83,22 +83,22 @@ h2 {
 #container #info-contact #first-col {
 	width: 385px;
 	float: left;
-	padding: 10px 130px;
+	padding: 5px 130px;
 	padding-right: 0px;
 	margin-bottom: -30px;
 	background: url('images/home_services_bg_design.gif') right bottom no-repeat;overflow:hidden;
 }
 #container #info-contact #second-col {
-	width: 450px;
+	width: 385px;
 	float: left;
 	padding-bottom: 5px;
-	margin-top: 10px;
+	margin-top: 5px;
 	margin-left: 240px;
 	background: url('images/home_services_bg_marketing.gif') left top no-repeat;overflow:hidden;
 }
 #container #info-contact  #first-col h2{
 	float: left;
-	font-size: 22px;
+	font-size: 20px;
 	color: #ffff00;
   	font-family: "Courier", Helvetica, serif;
 	padding-top: 5px;
@@ -112,7 +112,7 @@ h2 {
 }
 #container #info-contact  #second-col h2{
 	float: left;
-	font-size: 22px;
+	font-size: 20px;
 	color: #ffff00;
   	font-family: "Courier", Helvetica, serif;
   	padding-top: 0px;
@@ -122,7 +122,7 @@ h2 {
 	width: 382px;
 	float: left;	
 	text-align: justify;
-	padding-top: 38px;
+	padding-top: 43px;
 }
 /*page-footer CSS*/
 #container #page-footer {
