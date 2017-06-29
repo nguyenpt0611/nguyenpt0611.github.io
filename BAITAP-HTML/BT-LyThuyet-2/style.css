@@ -1,0 +1,35 @@
+#page-header, #container {
+	background-color:  #2D2F35;
+	padding: 0px;
+}
+hr {
+	padding-top: 0px;
+	margin: 0px;
+	border: 1px solid grey;
+}
+section {
+	padding-top: 0px;
+	margin: 0px;
+}
+body {
+	background-color:  #2D2F35;
+	padding-top: 0px;
+	margin: 0px;
+}
+#container #test {
+	background: url('images/bg_home_intro.gif') repeat;
+	height: 300px;
+	position: relative;
+}
+#container #home_intro {
+	float: right;
+}
+#container #port {
+	margin-left: 180px;
+}
+#container #port img {
+	padding-top: 5px;
+	padding-right: 10px;
+	width: 220px;
+	height: 107px;
+}
