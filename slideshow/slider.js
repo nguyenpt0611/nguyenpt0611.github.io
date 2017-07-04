@@ -4,18 +4,19 @@ var dots = document.getElementsByClassName("dot");
 //display img[0]
 showSlide(currentIndex);
 // Auto transistion slide
-// tranSlide();
+tranSlide();
 
+//process transistion to slide next/prev
 function plusSlide(n) {
 	showSlide(currentIndex += n);
-	// clearTimeout(myTimeout);
-	// myTimeout = setTimeout(tranSlide, 4000);
+	clearTimeout(myTimeout);
+	myTimeout = setTimeout(tranSlide, 4000);
 }
 function currentSlide(n) {
 	currentIndex = n;
 	showSlide(currentIndex);
-	// clearTimeout(myTimeout);
-	// myTimeout = setTimeout(tranSlide, 4000);
+	clearTimeout(myTimeout);
+	myTimeout = setTimeout(tranSlide, 4000);
 }
 /*
 *
