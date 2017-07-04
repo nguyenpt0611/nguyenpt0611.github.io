@@ -2,7 +2,11 @@ body {
     background-color: #000;
 }
 #slide-title {
+    font-family: sans-serif;
     text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+    text-shadow: 0.5px 0.5px #fff;
 }
 h2 {
     text-align: left;
@@ -13,14 +17,14 @@ span {
     font-size: 15px;
 }
 .animate-fading {
-	animation: animateright 0.7s;
+    animation: animateright 0.7s;
 }
 @keyframes animateright {
-	from{
-	transform: translate(70%,0%);
+    from{
+    transform: translate(70%,0%);
     } 
-	to {
-	transform: translate(0%,0%)
+    to {
+    transform: translate(0%,0%)
     }
 }
 #slide-title {
@@ -90,11 +94,13 @@ span {
     height: 50px;
 }
 .dot {
-    height: 13px;
-    width: 13px;
+    height: 15px;
+    width: 15px;
     color: #000;
+    font-weight: bold;
     background-color:#000;
     display:inline-block;
+    padding: 0px;
     cursor: pointer;
     transition: all 0.7s;
 }
