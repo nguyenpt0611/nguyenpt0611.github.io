@@ -1,5 +1,6 @@
 //start in first slide index of image equal 0
 var currentIndex = 1;
+//list of  images/descrption image/image dots
 var images = document.getElementsByClassName("mySlides");
 var descriptions = document.getElementsByClassName("description");
 var dots = document.getElementsByClassName("dot");
@@ -31,8 +32,7 @@ function plusSlide(n) {
 * n is number of order dot
 */
 function currentSlide(n) {
-	currentIndex = n;
-	showSlide(currentIndex);
+	showSlide(currentIndex = n);
 }
 /*main function to show slide
 * @para n
@@ -54,6 +54,9 @@ function showSlide(n) {
 	images[currentIndex-1].style.display = "block";
 	descriptions[currentIndex-1].style.display = "block"
 	dots[currentIndex-1].style.color = "#fff";
-	clearInterval(myTimeOut)
+	/*process to auto transistion to next slide
+	* reset time out after active prev/next button or image dots
+	*/
+	clearInterval(myTimeOut);
 	myTimeOut = setInterval(function(){showSlide(currentIndex += 1);}, TIME_AUTO_SEC*1000);
 }
