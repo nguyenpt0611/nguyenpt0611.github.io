@@ -14,7 +14,7 @@ span.dot {
 }
 #page-header {
 	height: 340px;
-	background: url('images/fill_header.jpg');
+	background: url('../images/fill_header.jpg');
 	margin-top: -30px;
 }
 #page-header #logo-img {
@@ -80,7 +80,7 @@ span.dot {
 	margin: 0px 45px 40px 20px;
 }
 #container #new-feed #most-view #back-link .item::before{
-	content: url('images/arr.gif');
+	content: url('../images/arr.gif');
 	padding-right: 5px;
 }
 /*new-review CSS*/
@@ -114,7 +114,7 @@ span.dot {
 	text-decoration: none;
 }
 #container #new-review .item a::before{
-	content: url('images/arr_1.gif');
+	content: url('../images/arr_1.gif');
 	padding-right: 5px;
 }
 /*page-footer CSS*/
