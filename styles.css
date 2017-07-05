@@ -1,0 +1,47 @@
+body {
+  background:url('background.jpg') no-repeat;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+a:link {
+    color: white; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+    style:bold;
+    background-color: transparent;
+    text-decoration: underline;
+}
+h1 {
+    display:block;
+    color:white;
+    background-color: transparent;
+    text-align: left;
+    float: left
+    padding: 16px;
+    text-decoration: none;
+}
+ol {
+    color:white;
+    background-color: transparent;
+}
+l {
+    color:white;
+    background-color: transparent;
+}
