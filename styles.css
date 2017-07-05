@@ -1,5 +1,5 @@
 body {
-  background-image:url('background.jpg') no-repeat;
+  background:url('background.jpg') no-repeat;
   padding: 0;
   margin: 0;
   overflow: auto;
