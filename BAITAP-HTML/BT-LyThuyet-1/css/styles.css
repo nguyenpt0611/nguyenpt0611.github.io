@@ -20,7 +20,7 @@ a {
 }
 /* Player-profile CSS */
 .container #title-player-profile  {
-	background: url('images/title_background.gif') repeat;
+	background: url('../images/title_background.gif') repeat;
 	font-weight: bold;
 	height: 25px;
 	line-height: 25px;
