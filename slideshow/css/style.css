@@ -29,7 +29,7 @@ h2 {
 }
 @keyframes animateright {
     from{
-    transform: translate(70%,0%);
+    transform: translate(10%,0%);
     } 
     to {
     transform: translate(0%,0%)
