@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>BAITAP-JAVASCRIPT-CALENDAR</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div id="cal">
+			<!-- Display prev/next button and MONTH-YEAR on top of widget -->
+			<div class="header">
+				<span class="left button" id="prev" onclick="btn_prev()"> &lang; </span>
+				<!-- <span class="left hook"></span> -->
+				<span class="month-year" id="label"> June 20&0 </span>
+				<!-- <span class="right hook"></span> -->
+				<span class="right button" id="next" onclick="btn_prev()"> &rang; </span>
+			</div>
+			<!-- Display day of week in calendar -->
+			<table id="days">
+				<td>sun</td>
+				<td>mon</td>
+				<td>tue</td>
+				<td>wed</td>
+				<td>thu</td>
+				<td>fri</td>
+				<td>sat</td>
+			</table>
+			<!-- Display days of a month -->
+			<div id="cal-frame">
+				<table class="curr">
+					<tbody>
+						<tr>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+						<tr>
+							<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<noscript>JS not supported</noscript>
+		<script src="js/calendar.js" type="text/javascript"></script>
+	</body>
+</html>
