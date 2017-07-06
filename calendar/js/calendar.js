@@ -7,25 +7,51 @@ var CURR_YEAR = TODAY.getFullYear();
 //calendar on screen
 curr_cal = new Date();
 
-myFunction();
+showCalendar(CURR_MONTH, CURR_YEAR);
 	
 function btn_prev() {
-	var parrent = document.getElementById("cal-frame");
-	var child = document.getElementsByClassName("curr");
-	parrent.removeChild(child[0]);
+		// var parrent = document.getElementById("cal-frame");
+		// var child = document.getElementsByClassName("curr");
+		// parrent.removeChild(child[0]);
+	if (document.getElementById("today") != null) 
+		document.getElementById("today").removeAttribute("id");
+	if (document.getElementById("default") != null) 
+		document.getElementById("default").removeAttribute("id");
+	CURR_MONTH -= 1;
+	if (CURR_MONTH > 0)
+	{
+		showCalendar(CURR_MONTH, CURR_YEAR);
+	}else {
+		CURR_YEAR -= 1;
+		CURR_MONTH = 11;
+		showCalendar(CURR_MONTH, CURR_YEAR);
+	}
 }
 function btn_next() {
-	var parrent = document.getElementById("cal-frame");
-	var child = document.getElementsByClassName("curr");
-	parrent.removeChild(child[0]);
+	// var parrent = document.getElementById("cal-frame");
+	// var child = document.getElementsByClassName("curr");
+	// parrent.removeChild(child[0]);
+	if (document.getElementById("today") != null) 
+		document.getElementById("today").removeAttribute("id");
+	if (document.getElementById("default") != null) 
+		document.getElementById("default").removeAttribute("id");
+	CURR_MONTH += 1;
+	if (CURR_MONTH < 11)
+	{
+		showCalendar(CURR_MONTH, CURR_YEAR);
+	}else {
+		CURR_MONTH  = 0;
+		CURR_YEAR +=1;
+		showCalendar(CURR_MONTH, CURR_YEAR);
+	}
 }
-function myFunction() {
+function showCalendar(month, year) {
 	
 	//first Day of curr_month
-	var first_of_month = new Date(MONTH_OF_YEAR[CURR_MONTH] + " " + 1 + " " + CURR_YEAR);
-	var last_of_month = new Date(CURR_YEAR, CURR_MONTH+1, 0);//get num_of_day in month
+	var first_of_month = new Date(MONTH_OF_YEAR[month] + " " + 1 + " " + year);
+	var last_of_month = new Date(year, month+1, 0);//get num_of_day in month
 	var num_of_month = last_of_month.getDate();
-	
+
 	create_Calendar(first_of_month, num_of_month);
 }
 //get calendar from a day in month and num_of_day in this month
@@ -42,11 +68,18 @@ function create_Calendar(first_day, last_of_month) {
 			rows_table[i].innerHTML = getDaysOfBeforeMonth(first_day) - (first_day.getDay() - 1 - i);
 		}else {
 		    var index = i - first_day.getDay() +1;//value to fill cell
+		    console.log(first_day.getDay());
 		    if(index <= last_of_month)
 		    {
 		        rows_table[i].innerHTML = index;	
-		        if (index ==TODAY.getDate())
-		        	rows_table[i].className = "today";
+		        if (first_day.getMonth() == TODAY.getMonth()) {
+		            if (index == TODAY.getDate())
+		        	    rows_table[i].id = "today";
+		        }else {
+		        	if (index == 1) {
+		        		rows_table[i].id = "default";
+		        	}
+		        }
 		    }
 		//days of after curr_month
 		else {
