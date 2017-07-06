@@ -70,7 +70,7 @@ h2 {
     color: #fff;
     top: 150px;
     left: 2%;
-    padding: 10px 40px 10px 0px;
+    padding: 10px 40px 10px 5px;
     font-size: 36px;
     border: none;
     border-radius: 5px;
@@ -84,7 +84,7 @@ h2 {
     color: #fff;
     top: 150px;
     left: 88%;
-    padding: 10px 0px 10px 40px;
+    padding: 10px 5px 10px 40px;
     font-size: 36px;
     border: none;
     border-radius: 5px;
