@@ -25,7 +25,7 @@ h2 {
     margin-left: -35px;
 }
 .animate-fading {
-    animation: animateright 0.7s;
+    animation: animateright 0.3s;
 }
 @keyframes animateright {
     from{
