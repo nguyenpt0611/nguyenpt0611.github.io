@@ -25,11 +25,11 @@ h2 {
     margin-left: -35px;
 }
 .animate-fading {
-    animation: animateright 0.7s;
+    animation: animateright 0.3s;
 }
 @keyframes animateright {
     from{
-    transform: translate(70%,0%);
+    transform: translate(10%,0%);
     } 
     to {
     transform: translate(0%,0%)
