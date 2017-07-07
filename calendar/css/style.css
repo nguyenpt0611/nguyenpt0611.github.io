@@ -1,10 +1,17 @@
 body { 
     background: #e0e0e0; 
 } 
-#cal { 
+#input {
+    /*-moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
+    -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); */
+    margin:5px auto; 
+    font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
+    text-align: center;
+}
+#cal {
     -moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
     -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
-    margin:50px auto; 
+    margin:10px auto; 
     font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
     display:table; 
 }
@@ -93,7 +100,7 @@ body {
     line-height:30px; 
     text-align:center; 
     border:1px solid #e6e6e6; 
-    cursor:default; 
+    cursor:pointer; 
 } 
 #cal #days td { 
     height:26px; 
@@ -107,23 +114,22 @@ body {
     border-right:1px solid #fff; 
 }
 /*fill color cell of today*/
-#cal #cal-frame #today { 
+#cal #cal-frame .today { 
     background:#ededed; 
     color:#8c8c8c; 
     box-shadow:1px 1px 0px #fff inset; 
     -moz-box-shadow:1px 1px 0px #fff inset; 
     -webkit-box-shadow:1px 1px 0px #fff inset; 
 }
-#cal #cal-frame #default { 
+#cal #cal-frame .default { 
     background:#000; 
     color:#8c8c8c; 
     box-shadow:1px 1px 0px #fff inset; 
     -moz-box-shadow:1px 1px 0px #fff inset; 
     -webkit-box-shadow:1px 1px 0px #fff inset; 
-    opacity: 0.3;
+    opacity: 0.7;
 }
-/*set hover days of month*/
-/*#cal #cal-frame td:not(.nil):hover { 
+#cal #cal-frame .active{ 
     color:#fff; 
     text-shadow: #6C1A07 0px -1px; 
     background:#CD310D; 
@@ -131,9 +137,24 @@ body {
     background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to(#cd310d)); 
     -moz-box-shadow:0px 0px 0px; 
     -webkit-box-shadow:0px 0px 0px; 
-}*/
- -webkit-box-shadow:0px 0px 0px; 
 }
+#cal #cal-frame .before{ 
+    background:#ededed; 
+    color:#8c8c8c; 
+    box-shadow:1px 1px 0px #fff inset; 
+    -moz-box-shadow:1px 1px 0px #fff inset; 
+    -webkit-box-shadow:1px 1px 0px #fff inset; 
+    opacity: 0.5;
+}
+#cal #cal-frame .after{ 
+    background:#ededed; 
+    color:#8c8c8c; 
+    box-shadow:1px 1px 0px #fff inset; 
+    -moz-box-shadow:1px 1px 0px #fff inset; 
+    -webkit-box-shadow:1px 1px 0px #fff inset; 
+    opacity: 0.5;
+}
+/*set hover days of month*/
 #cal #cal-frame td:hover { 
     color:#fff; 
     text-shadow: #6C1A07 0px -1px; 
@@ -154,7 +175,7 @@ body {
     top:5px; 
 }
 /*use to transistion prev/next month*/
-#cal #cal-frame table.curr { 
+#cal #cal-frame table.cal-table { 
     float:left;      
 } 
 #cal #cal-frame table.temp { 
