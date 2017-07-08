@@ -77,19 +77,19 @@ function showDay(day) {
 
 	if(day.classList.contains("before"))
 	{
-		var month = CURR_MONTH - 1;
+		var month = CURR_MONTH;
 		var year = CURR_YEAR;
 		if(month<1) {year--; month= 12;};
 		input.value = day.innerHTML + "-" + month + "-" + year;
 	}else
 	if(day.classList.contains("after"))
 	{
-		var month = CURR_MONTH + 1;
+		var month = CURR_MONTH + 2;
 		var year = CURR_YEAR;
 		if(month>12) {year++; month = 1;}
 		input.value = day.innerHTML + "-" + month + "-" + year ;
 	}else {
-		var month = CURR_MONTH;
+		var month = CURR_MONTH+1;
 		var year = CURR_YEAR;
 		input.value = day.innerHTML + "-" + month + "-" + year;
 	}
@@ -282,7 +282,7 @@ function create_Calendar(first_day, last_of_month) {
 		    if(index <= last_of_month)
 		    {
 		        rows_table[i].innerHTML = index;	
-		        if (first_day.getMonth() == TODAY.getMonth()) {
+		        if (first_day.getMonth() == TODAY.getMonth() && first_day.getFullYear() == TODAY.getFullYear()) {
 		            if (index == TODAY.getDate())
 		        	    rows_table[i].classList.add("today");
 		        }else {

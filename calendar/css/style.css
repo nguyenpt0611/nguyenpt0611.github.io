@@ -2,13 +2,12 @@ body {
     background: #e0e0e0; 
 } 
 #input {
-    /*-moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
-    -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); */
-    margin:5px auto; 
+    margin:15px auto; 
     font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
     text-align: center;
 }
 #cal {
+    width: 280px;
     -moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
     -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); 
     margin:10px auto; 
@@ -20,6 +19,7 @@ body {
     background: #cd310d; 
     background: -moz-linear-gradient(top, #b32b0c, #cd310d); 
     background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to (#cd310d)); 
+    width: 280px;
     height: 34px; 
     position: relative; 
     color:#fff; 
@@ -34,14 +34,24 @@ body {
     text-transform: uppercase; 
 } 
 #cal .header select {
-    background:#cd310d; 
+    background:transparent; 
     display:inline-block; 
     line-height:34px; 
-    letter-spacing: 1px; 
-    width: 50%; 
+    width: 90px;
     height: 100%;
-    text-align: center; 
+    /*none-display button showbox*/
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;  
+    font-size: 13px;
     border: 1px solid #cd310d;
+    text-align-last:center;
+}
+#cal .header #select-month {
+    margin-left: 25px;
+}
+#cal .header #select-year {
+    margin-left: 50px;
 }
 #cal .header span { 
     display:inline-block; 
@@ -78,33 +88,33 @@ body {
 } 
 #cal .header .left.button { 
     left:0; 
-    /*-webkit-border-top-left-radius: 5px; */
-    /*-moz-border-radius-top-left: 5px; */
-    /*border-top-left-radius: 5px; */
+    -webkit-border-top-left-radius: 5px; 
+    -moz-border-radius-top-left: 5px; 
+    border-top-left-radius: 5px; 
     border-right:1px solid #ae2a0c; 
 } 
 #cal .header .right.button { 
-    left:95px;
+    left:115px;
     top:0; 
     border-left:1px solid #ae2a0c; 
-    /*-webkit-border-top-right-radius: 5px; */
-    /*-moz-border-radius-topright: 5px; */
-   /* border-top-right-radius: 5px; */
+    -webkit-border-top-right-radius: 5px; 
+    -moz-border-radius-topright: 5px; 
+    border-top-right-radius: 5px; 
 } 
 #cal .header .left2.button { 
-    left:120px; 
-    /*-webkit-border-top-left-radius: 5px; */
-    /*-moz-border-radius-top-left: 5px; */
-    /*border-top-left-radius: 5px; */
+    left:140px; 
+    -webkit-border-top-left-radius: 5px; 
+    -moz-border-radius-top-left: 5px; 
+    border-top-left-radius: 5px; 
     border-right:1px solid #ae2a0c; 
 } 
 #cal .header .right2.button { 
     right:0px;
     top:0; 
     border-left:1px solid #ae2a0c; 
-    /*-webkit-border-top-right-radius: 5px; */
-    /*-moz-border-radius-topright: 5px; */
-    /*border-top-right-radius: 5px; */
+    -webkit-border-top-right-radius: 5px; 
+    -moz-border-radius-topright: 5px; 
+    border-top-right-radius: 5px; 
 } 
 /*#cal .header .button:hover { 
     background: -moz-linear-gradient(top, #d94215, #bb330f); 
@@ -119,16 +129,20 @@ body {
 #cal table { 
     background:#fff; 
     border-collapse:collapse; 
+    width: 100%;
 }
 #cal td { 
     color:#2b2b2b; 
-    width:30px; 
-    height:30px; 
-    line-height:30px; 
+    width:40px; 
+    height:40px; 
+    line-height:40px; 
     text-align:center; 
     border:1px solid #e6e6e6; 
     cursor:pointer; 
 } 
+#cal #days {
+	width: 280px;
+}
 #cal #days td { 
     height:26px; 
     line-height: 26px; 
@@ -168,17 +182,11 @@ body {
 #cal #cal-frame .before{ 
     background:#ededed; 
     color:#8c8c8c; 
-    box-shadow:1px 1px 0px #fff inset; 
-    -moz-box-shadow:1px 1px 0px #fff inset; 
-    -webkit-box-shadow:1px 1px 0px #fff inset; 
     opacity: 0.5;
 }
 #cal #cal-frame .after{ 
     background:#ededed; 
     color:#8c8c8c; 
-    box-shadow:1px 1px 0px #fff inset; 
-    -moz-box-shadow:1px 1px 0px #fff inset; 
-    -webkit-box-shadow:1px 1px 0px #fff inset; 
     opacity: 0.5;
 }
 /*set hover days of month*/
@@ -200,11 +208,4 @@ body {
 } 
 #cal #cal-frame td span:last-child { 
     top:5px; 
-}
-/*use to transistion prev/next month*/
-#cal #cal-frame table.cal-table { 
-    float:left;      
-} 
-#cal #cal-frame table.temp { 
-    position:absolute; 
 }
