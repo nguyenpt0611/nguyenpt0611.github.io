@@ -3,31 +3,58 @@ var DAY_OF_WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 var table;
 var cells_of_table;
-var header_label;
 
 TODAY = new Date();
 var CURR_MONTH;
 var CURR_YEAR;
 
-//calendar on screen
-curr_cal = new Date();
 
 var input = document.getElementById("output-date");
 
 input.addEventListener("click", function () {
 	
 	if (input.value == ""){
-
+		//Display exacly date
+		//set value at today
 		CURR_MONTH = TODAY.getMonth();
 		CURR_YEAR = TODAY.getFullYear();
 		showCalendar(CURR_MONTH, CURR_YEAR);
 	}else{
-		var month = input.value.split("-")[1];
-		var year = input.value.split("-")[2];
-		showCalendar(month-1, year);
+		//Check in format Date
+		if(isDate(input.value)){
+			//Display with value in input
+			CURR_MONTH = parseInt(input.value.split("-")[1]) - 1;
+			CURR_YEAR = parseInt(input.value.split("-")[2]);
+			showCalendar(CURR_MONTH, CURR_YEAR);
+		}else{
+			window.alert("Input invalid");
+		}
 	}
 });
-
+function isDate(text){
+	//case1 YYYY/MM/DD
+	var case1 = "(([0-9]{4})[-]([1-9]|1[0-2])[-]([1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1}))";
+	//case2 DD/MM/YYYY
+	var case2 = "(([1-9]{1}|[0-2]{1}[0-9]{1}|3[0-1]{1})[-]([1-9]|1[0-2])[-]([0-9]{4}))";
+	//case3 MM/DD/YYYY
+	var case3 = "(([1-9]|1[0-2])[-]([1-9]{1}|[0-2]{1}[0-9]{1}|3[0-1]{1})[-]([0-9]{4}))";
+	var regexDate = new RegExp(case1 + "|" + case2 + "|" + case3);
+	return regexDate.test(text);
+}
+function select_Month() {
+	var option_month = document.getElementById("select-month");
+	option_month.onchange = function() {
+		CURR_MONTH = option_month.value-1;
+		showCalendar(CURR_MONTH, CURR_YEAR);
+	};
+}
+function select_Year() {
+	var option_year = document.getElementById("select-year");
+	option_year.onchange = function() {
+		CURR_YEAR = parseInt(option_year.value);
+		showCalendar(CURR_MONTH, CURR_YEAR);
+	};
+}
 /*selectDay on calendar
 *selectDay func add event onClick to cells_of_table
 *showDay func use to stick & select day in cell
@@ -50,20 +77,21 @@ function showDay(day) {
 
 	if(day.classList.contains("before"))
 	{
-		var month = indexOfMonth(header_label.innerHTML.split(" ")[0]) - 1;
-		var year = header_label.innerHTML.split(" ")[1];
+		var month = CURR_MONTH - 1;
+		var year = CURR_YEAR;
 		if(month<1) {year--; month= 12;};
 		input.value = day.innerHTML + "-" + month + "-" + year;
 	}else
 	if(day.classList.contains("after"))
 	{
-		var month = indexOfMonth(header_label.innerHTML.split(" ")[0]) + 1;
-		var year = header_label.innerHTML.split(" ")[1];
+		var month = CURR_MONTH + 1;
+		var year = CURR_YEAR;
 		if(month>12) {year++; month = 1;}
 		input.value = day.innerHTML + "-" + month + "-" + year ;
 	}else {
-		var month = indexOfMonth(header_label.innerHTML.split(" ")[0]);
-		input.value = day.innerHTML + "-" + month + "-" + header_label.innerHTML.split(" ")[1] ;
+		var month = CURR_MONTH;
+		var year = CURR_YEAR;
+		input.value = day.innerHTML + "-" + month + "-" + year;
 	}
 
 	//unshow calendar after chooseDate
@@ -104,14 +132,21 @@ function btn_next() {
 		showCalendar(CURR_MONTH, CURR_YEAR);
 	}
 }
-//main func to show calendar
-function showCalendar(month, year) {
-	//first Day of curr_month
-	var first_of_month = new Date(MONTH_OF_YEAR[month] + " " + 1 + " " + year);
-	var last_of_month = new Date(year, month+1, 0);//get num_of_day in month
-	var num_of_month = last_of_month.getDate();
-	create_Calendar(first_of_month, num_of_month);
+//move to prev/next year
+function btn_plus_year(n) {
+	if (document.getElementsByClassName("today").length != 0){
+		document.getElementsByClassName("today")[0].classList.remove("today");
+	}
+	if (document.getElementsByClassName("default").length != 0){
+		document.getElementsByClassName("default")[0].classList.remove("default");
+	}
+	var year = CURR_YEAR += n;
+	if (year > 1950 && year < TODAY.getFullYear()+200)
+	{
+		showCalendar(CURR_MONTH, year);
+	}
 }
+
 //create empty_cal
 function create_Empty_Calendar() {
 	var input = document.getElementById("input");
@@ -135,13 +170,50 @@ function create_Empty_Calendar() {
 	right_button.id = "next";
 	right_button.setAttribute("onclick","btn_next()");
 	right_button.innerHTML = " &rang; ";
-	var label = document.createElement("span");
-	label.className = "month-year";
-	label.id = "label";
-	
+	//change year
+	var left_button2 = document.createElement("span");
+	left_button2.classList.add("left2");
+	left_button2.classList.add("button");
+	left_button2.id = "prev2";
+	left_button2.setAttribute("onclick","btn_plus_year(-1)");
+	left_button2.innerHTML = " &lang; ";
+
+	var right_button2 = document.createElement("span");
+
+	right_button2.classList.add("right2");
+	right_button2.classList.add("button");
+	right_button2.id = "next2";
+	right_button2.setAttribute("onclick","btn_plus_year(1)");
+	right_button2.innerHTML = " &rang; ";
+
+	var select_month = document.createElement("select");
+	for (var i=0;i<MONTH_OF_YEAR.length;i++){
+		var option_month = document.createElement("option");
+		option_month.value = i+1;
+		option_month.text = MONTH_OF_YEAR[i];
+		select_month.appendChild(option_month);
+	}
+	select_month.id = "select-month";
+
+
+	var select_year = document.createElement("select");
+	for (var i=1950;i<CURR_YEAR+200;i++){
+		var option_year= document.createElement("option");
+		option_year.value = i;
+		option_year.text = i;
+		select_year.appendChild(option_year);
+	}
+	select_year.id = "select-year";
+
+
 	header.appendChild(left_button);
-	header.appendChild(label);
+	// header.appendChild(label);
+	header.appendChild(select_month);
 	header.appendChild(right_button);
+	header.appendChild(left_button2);
+	header.appendChild(select_year);
+	header.appendChild(right_button2);
+	
 
 	div.appendChild(header);
 
@@ -178,17 +250,26 @@ function clear_Calendar() {
 	if(calendar != null)
 		calendar.parentNode.removeChild(calendar);
 }
+//main func to show calendar
+function showCalendar(month, year) {
+	//first Day of curr_month
+	var first_of_month = new Date(MONTH_OF_YEAR[month] + " " + 1 + " " + year);
+	var last_of_month = new Date(year, month+1, 0);//get num_of_day in month
+	var num_of_month = last_of_month.getDate();
+
+	create_Calendar(first_of_month, num_of_month);
+}
 //get calendar from a day in month and num_of_day in this month
 function create_Calendar(first_day, last_of_month) {
 	clear_Calendar();
 	create_Empty_Calendar();
-	header_label = document.getElementById("label");
+
+	document.getElementById("select-month").value = CURR_MONTH + 1;
+	document.getElementById("select-year").value = CURR_YEAR;
 
 	/*get cell in table*/
 	var cal_frame = document.getElementById("cal-frame");
 	var rows_table = cal_frame.getElementsByTagName("td");
-	//set value of label
-	header_label.innerHTML = MONTH_OF_YEAR[first_day.getMonth()] + " " + first_day.getFullYear();
 
 	//display day of month
 	for ( var i=0;i<rows_table.length; i++){
@@ -219,6 +300,8 @@ function create_Calendar(first_day, last_of_month) {
 	}
 	//create selector for cells_of_table;
 	selectDay();
+	select_Month();
+	select_Year();
 }
 function getDaysOfBeforeMonth(date) {
 	var newDate = new Date(date.getFullYear(), date.getMonth(), 0);
