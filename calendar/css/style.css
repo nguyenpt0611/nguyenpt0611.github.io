@@ -2,9 +2,7 @@ body {
     background: #e0e0e0; 
 } 
 #input {
-    /*-moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); */
-    /*-webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25); */
-    margin:5px auto; 
+    margin:15px auto; 
     font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
     text-align: center;
 }
@@ -36,11 +34,15 @@ body {
     text-transform: uppercase; 
 } 
 #cal .header select {
-    background:#cd310d; 
+    background:transparent; 
     display:inline-block; 
     line-height:34px; 
     width: 90px;
     height: 100%;
+    /*none-display button showbox*/
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;  
     font-size: 13px;
     border: 1px solid #cd310d;
     text-align-last:center;
@@ -206,11 +208,4 @@ body {
 } 
 #cal #cal-frame td span:last-child { 
     top:5px; 
-}
-/*use to transistion prev/next month*/
-#cal #cal-frame table.cal-table { 
-    float:left;      
-} 
-#cal #cal-frame table.temp { 
-    position:absolute; 
 }
