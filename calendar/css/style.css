@@ -45,7 +45,7 @@ body {
     appearance: none;  
     font-size: 13px;
     border: 1px solid #cd310d;
-    -mtext-align-last:center;
+    -moz-text-align-last:center;
     text-align-last:center;
 }
 #cal .header #select-month {
