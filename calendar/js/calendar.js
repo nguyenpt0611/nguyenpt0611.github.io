@@ -16,14 +16,14 @@ input.addEventListener("click", function () {
 	if (input.value == ""){
 		//Display exacly date
 		//set value at today
-		CURR_MONTH = TODAY.getMonth();
+		CURR_MONTH = TODAY.getMonth() + 1;
 		CURR_YEAR = TODAY.getFullYear();
 		showCalendar(CURR_MONTH, CURR_YEAR);
 	}else{
 		//Check in format Date
 		if(isDate(input.value)){
 			//Display with value in input
-			CURR_MONTH = parseInt(input.value.split("-")[1]) - 1;
+			CURR_MONTH = parseInt(input.value.split("-")[1]);
 			CURR_YEAR = parseInt(input.value.split("-")[2]);
 			showCalendar(CURR_MONTH, CURR_YEAR);
 		}else{
@@ -44,7 +44,7 @@ function isDate(text){
 function select_Month() {
 	var option_month = document.getElementById("select-month");
 	option_month.onchange = function() {
-		CURR_MONTH = option_month.value-1;
+		CURR_MONTH = option_month.value;
 		showCalendar(CURR_MONTH, CURR_YEAR);
 	};
 }
@@ -77,19 +77,19 @@ function showDay(day) {
 
 	if(day.classList.contains("before"))
 	{
-		var month = CURR_MONTH;
+		var month = CURR_MONTH-1;
 		var year = CURR_YEAR;
 		if(month<1) {year--; month= 12;};
 		input.value = day.innerHTML + "-" + month + "-" + year;
 	}else
 	if(day.classList.contains("after"))
 	{
-		var month = CURR_MONTH + 2;
+		var month = CURR_MONTH + 1;
 		var year = CURR_YEAR;
 		if(month>12) {year++; month = 1;}
 		input.value = day.innerHTML + "-" + month + "-" + year ;
 	}else {
-		var month = CURR_MONTH+1;
+		var month = CURR_MONTH;
 		var year = CURR_YEAR;
 		input.value = day.innerHTML + "-" + month + "-" + year;
 	}
@@ -124,10 +124,10 @@ function btn_next() {
 		document.getElementsByClassName("default")[0].classList.remove("default");
 	}
 	CURR_MONTH += 1;
-	if (CURR_MONTH < 11){
+	if (CURR_MONTH < 13){
 		showCalendar(CURR_MONTH, CURR_YEAR);
 	}else {
-		CURR_MONTH  = 0;
+		CURR_MONTH  = 1;
 		CURR_YEAR +=1;
 		showCalendar(CURR_MONTH, CURR_YEAR);
 	}
@@ -253,8 +253,8 @@ function clear_Calendar() {
 //main func to show calendar
 function showCalendar(month, year) {
 	//first Day of curr_month
-	var first_of_month = new Date(MONTH_OF_YEAR[month] + " " + 1 + " " + year);
-	var last_of_month = new Date(year, month+1, 0);//get num_of_day in month
+	var first_of_month = new Date(MONTH_OF_YEAR[month-1] + " " + 1 + " " + year);
+	var last_of_month = new Date(year, month, 0);//get num_of_day in month
 	var num_of_month = last_of_month.getDate();
 
 	create_Calendar(first_of_month, num_of_month);
@@ -264,7 +264,7 @@ function create_Calendar(first_day, last_of_month) {
 	clear_Calendar();
 	create_Empty_Calendar();
 
-	document.getElementById("select-month").value = CURR_MONTH + 1;
+	document.getElementById("select-month").value = CURR_MONTH;
 	document.getElementById("select-year").value = CURR_YEAR;
 
 	/*get cell in table*/
@@ -275,7 +275,7 @@ function create_Calendar(first_day, last_of_month) {
 	for ( var i=0;i<rows_table.length; i++){
 		//days of before curr_month
 		if(i<first_day.getDay()){
-			rows_table[i].innerHTML = getDaysOfBeforeMonth(first_day) - (first_day.getDay() - 1 - i);
+			rows_table[i].innerHTML = getDaysOfBeforeMonth(first_day) - (first_day.getDay() - 1) + i;
 			rows_table[i].classList.add("before");
 		}else {
 		    var index = i - first_day.getDay() +1;//value to fill cell
