@@ -54,6 +54,7 @@ a{
   	padding-right:10px;
   	font-size:16px;
   	line-height:18px;
+  	list-style:none;
 }
 /*Comment CSS*/
 .container #comment-wrap{
@@ -107,7 +108,7 @@ a{
 	padding-top:5px;
 }
 #comment-form .form-input input{
-	width:200px;
+	width:145px;
 	border:1px solid #BBB7B3;
 }
 .container #comment-form .row .form-comment-text{
@@ -118,9 +119,10 @@ a{
 .container #comment-form .row .form-comment-text textarea[type="text"]{
 	padding:4px;
 }
-.container #comment-form .row .form-comment-text #comment_label{
+.container #comment-form .row .form-comment-text #area-comment{
 	width:375px;
 	height:90px;
 	resize:none;
-	font-family: Georgia, 'Times New Roman', Times, serif;	
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-size:14px
 }
