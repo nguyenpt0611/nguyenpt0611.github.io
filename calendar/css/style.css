@@ -14,6 +14,7 @@ body {
     font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; 
     display:table; 
 }
+/*header CSS*/
 #cal .header { 
     cursor:pointer; 
     background: #cd310d; 
@@ -32,7 +33,8 @@ body {
     font-weight:bold; 
     text-shadow:0px -1px 0 #87260C; 
     text-transform: uppercase; 
-} 
+}
+/*select month/year CSS*/
 #cal .header select {
     background:transparent; 
     display:inline-block; 
@@ -57,27 +59,6 @@ body {
     display:inline-block; 
     line-height:34px; 
 }
-/*#cal .header .hook { 
-    width: 9px; 
-    height: 28px; 
-    position: absolute; 
-    bottom:60%; 
-    border-radius:10px; 
-    -moz-border-radius:10px; 
-    -webkit-border-radius:10px; 
-    background:#ececec; 
-    background: -moz-linear-gradient(right top, #fff, #827e7d); 
-    background: -webkit-gradient(linear, right top, right bottom, from(#fff), to(#827e7d)); 
-    box-shadow:0px -1px 2px rgba(0, 0, 0, 0.65 ); 
-    -moz-box-shadow:0px -1px 2px rgba(0, 0, 0, 0.65 ); 
-    -webkit-box-shadow:0px -1px 2px rgba(0, 0, 0, 0.65 ); 
-} 
-.right.hook { 
-    right:15%; 
-} 
-.left.hook { 
-    left: 15%; 
-}*/
 /*month switch button*/
 #cal .header .button { 
     width:24px; 
@@ -116,10 +97,6 @@ body {
     -moz-border-radius-topright: 5px; 
     border-top-right-radius: 5px; 
 } 
-/*#cal .header .button:hover { 
-    background: -moz-linear-gradient(top, #d94215, #bb330f); 
-    background: -webkit-gradient(linear, left top, left bottom, from(#d94215), to(#bb330f)); 
-}*/
 #cal .header .month-year { 
     letter-spacing: 1px; 
     width: 100%; 
@@ -162,6 +139,7 @@ body {
     -moz-box-shadow:1px 1px 0px #fff inset; 
     -webkit-box-shadow:1px 1px 0px #fff inset; 
 }
+/*first day of month*/
 #cal #cal-frame .default { 
     background:#000; 
     color:#8c8c8c; 
@@ -169,15 +147,6 @@ body {
     -moz-box-shadow:1px 1px 0px #fff inset; 
     -webkit-box-shadow:1px 1px 0px #fff inset; 
     opacity: 0.7;
-}
-#cal #cal-frame .active{ 
-    color:#fff; 
-    text-shadow: #6C1A07 0px -1px; 
-    background:#CD310D; 
-    background: -moz-linear-gradient(top, #b32b0c, #cd310d); 
-    background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to(#cd310d)); 
-    -moz-box-shadow:0px 0px 0px; 
-    -webkit-box-shadow:0px 0px 0px; 
 }
 #cal #cal-frame .before{ 
     background:#ededed; 
@@ -188,6 +157,16 @@ body {
     background:#ededed; 
     color:#8c8c8c; 
     opacity: 0.5;
+}
+/*day is selected*/
+#cal #cal-frame .active{ 
+    color:#fff; 
+    text-shadow: #6C1A07 0px -1px; 
+    background:#CD310D; 
+    background: -moz-linear-gradient(top, #b32b0c, #cd310d); 
+    background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to(#cd310d)); 
+    -moz-box-shadow:0px 0px 0px; 
+    -webkit-box-shadow:0px 0px 0px; 
 }
 /*set hover days of month*/
 #cal #cal-frame td:hover { 
