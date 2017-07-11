@@ -66,12 +66,12 @@ function isPassword() {
 	var pwd = document.getElementById("password");
 	var result = document.getElementById("pwd-error");
 	result.innerHTML = "";
-	if(pwd.value.length< 8) {
-		result.innerHTML = "Password length min 8 letter";
-		return false;
-	}
 	if(pwd.value == "") {
 		result.innerHTML = "Please input your username";
+		return false;
+	}
+	if(pwd.value.length< 8) {
+		result.innerHTML = "Password length min 8 letter";
 		return false;
 	}
 	return true;
@@ -85,12 +85,12 @@ function isEmail() {
 	var result = document.getElementById("email-error");
 	result.innerHTML = "";
 	var regexEmail = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
-	if(!regexEmail.test(email.value)) {
-		result.innerHTML = "Email wrong format";
-		return false;
-	}
 	if(email.value == "") {
 		result.innerHTML = "Please input your username";
+		return false;
+	}
+	if(!regexEmail.test(email.value)) {
+		result.innerHTML = "Email wrong format";
 		return false;
 	}
 	return true;
@@ -110,7 +110,11 @@ function isDate(){
 	var result = document.getElementById("date-error");
 	result.innerHTML = "";
 	console.log(regexDate.test(birthday.value));
-	if(!regexDate.test(birthday.value) || birthday.value == "") {
+	if(birthday.value == "") {
+		result.innerHTML = "Please input your username";
+		return false;
+	}
+	if(!regexDate.test(birthday.value)) {
 		result.innerHTML = "Birthday wrong format";
 		return false;
 	}
