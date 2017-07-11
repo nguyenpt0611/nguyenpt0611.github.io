@@ -1,6 +1,7 @@
 /*main function to check user from server after check validate input data
 * use AJAX XMLHttpRequest 
-* re
+* check user name on database
+* return correct/incorrect
 */
 function checkSubmit() {
 	var username = document.getElementById("user-name");
@@ -67,7 +68,7 @@ function isPassword() {
 	var result = document.getElementById("pwd-error");
 	result.innerHTML = "";
 	if(pwd.value == "") {
-		result.innerHTML = "Please input your username";
+		result.innerHTML = "Please input your password";
 		return false;
 	}
 	if(pwd.value.length< 8) {
@@ -86,7 +87,7 @@ function isEmail() {
 	result.innerHTML = "";
 	var regexEmail = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
 	if(email.value == "") {
-		result.innerHTML = "Please input your username";
+		result.innerHTML = "Please input your email";
 		return false;
 	}
 	if(!regexEmail.test(email.value)) {
@@ -111,7 +112,7 @@ function isDate(){
 	result.innerHTML = "";
 	console.log(regexDate.test(birthday.value));
 	if(birthday.value == "") {
-		result.innerHTML = "Please input your username";
+		result.innerHTML = "Please input your email";
 		return false;
 	}
 	if(!regexDate.test(birthday.value)) {
