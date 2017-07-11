@@ -49,12 +49,12 @@ function isUserName() {
 		result.innerHTML = "Please input your username";
 		return false;
 	}
-	if(username.value.length < 8) {
-		result.innerHTML = "Username length min 8 letter";
-		return false;
-	}
 	if(!regexUsername.test(username.value)) {
 		result.innerHTML = "Invalid username";
+		return false;
+	}
+	if(username.value.length < 8) {
+		result.innerHTML = "Username length min 8 letter";
 		return false;
 	}
 	return true;
