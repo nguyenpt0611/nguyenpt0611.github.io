@@ -45,12 +45,12 @@ function isUserName() {
 	var result = document.getElementById("user-error");
 	result.innerHTML = "";
 	var regexUsername = new RegExp("^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$");
-	if(username.value.length < 8) {
-		result.innerHTML = "Username length min 8 letter";
-		return false;
-	}
 	if(username.value == "") {
 		result.innerHTML = "Please input your username";
+		return false;
+	}
+	if(username.value.length < 8) {
+		result.innerHTML = "Username length min 8 letter";
 		return false;
 	}
 	if(!regexUsername.test(username.value)) {
