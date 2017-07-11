@@ -12,29 +12,29 @@
 			<div class="form-fields">
 				<label class="label-field">Username:</label>
 				<input type="text" id="user-name" placeholder="user name">
-				<span id="user-error"></span>
+				<span class="result-validate" id="user-error"></span>
 			</div>
 			<div class="form-fields">
 				<label class="label-field">Password:</label>
 				<input type="password" id="password" placeholder="password">
-				<span id="pwd-error"></span>
+				<span class="result-validate" id="pwd-error"></span>
 			</div>
 			<div class="form-fields">
 				<label class="label-field">Email:</label>
 				<input type="text" id="email" placeholder="e.g. example@email.com">
-				<span id="email-error"></span>
+				<span class="result-validate" id="email-error"></span>
 			</div>
 			<div class="form-fields">
 				<!-- Birthday to show calendar -->
 				<label class="label-field">Birthday:</label>
 				<div id="input">
 					<input type="text" id="output-date" placeholder="e.g. DD/MM/YYYY">
-					<span id="date-error"></span>
+					<span class="result-validate" id="date-error"></span>
 				</div>
 			</div>
 			<div id="btn-controll">
-				<button type="submit" class="btn-submit">Submit</button>
-				<button type="button" class="btn-refresh" onclick="checkSubmit()">Refresh</button>
+				<button type="button" class="btn-submit" onclick="checkSubmit()">Submit</button>
+				<button type="button" class="btn-refresh" onclick="clearForm()">Refresh</button>
 			</div>
 		</form>
 		<noscript>JS not supported</noscript>

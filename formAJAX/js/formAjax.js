@@ -1,73 +1,126 @@
+/*main function to check user from server after check validate input data
+* use AJAX XMLHttpRequest 
+* re
+*/
 function checkSubmit() {
-	if(isUserName() && isPassword() && isEmail() && isDate())
-	{
+	var username = document.getElementById("user-name");
+	if(checkValidator()) {
 		console.log("success!!!");
+		var xhttp;
+		if (window.XMLHttpRequest) {
+			// code for modern browsers
+			xhttp = new XMLHttpRequest();
+		}
+		else {
+			// code for IE6, IE5
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			console.log(this.responseText);
+		}
+		};
+		xhttp.open("GET", "demo_validate.asp?t=" + username.innerHTML, true);
+		xhttp.send();
 	}
 }
+/*check input username, password, email and birthday
+* input valid return true 
+* input invalid
+*/
+function checkValidator() {
+	var flag = true;
+	if(!isUserName()) flag= false;
+	if(!isPassword()) flag = false;
+	if(!isEmail()) flag = false;
+	if(!isDate()) flag = false;
+	return flag;
+}
+/*check input user name 
+* format user name
+* not null or length min 8 letter
+*/
 function isUserName() {
 	var username = document.getElementById("user-name");
+	var result = document.getElementById("user-error");
+	result.innerHTML = "";
 	var regexUsername = new RegExp("^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$");
 	if(username.value.length < 8) {
-		document.getElementById("user-error").innerHTML = "Username length min 8 letter";
+		result.innerHTML = "Username length min 8 letter";
 		return false;
 	}
 	if(username.value == "") {
-		document.getElementById("user-error").innerHTML = "Please input your username";
+		result.innerHTML = "Please input your username";
 		return false;
 	}
 	if(!regexUsername.test(username.value)) {
-		document.getElementById("user-error").innerHTML = "Invalid username";
+		result.innerHTML = "Invalid username";
 		return false;
 	}
 	return true;
 }
+/*check input password 
+* not null or length min 8 letter
+*/
 function isPassword() {
 	var pwd = document.getElementById("password");
+	var result = document.getElementById("pwd-error");
+	result.innerHTML = "";
 	if(pwd.value.length< 8) {
-		document.getElementById("pwd-error").innerHTML = "Password length min 8 letter";
+		result.innerHTML = "Password length min 8 letter";
+		return false;
+	}
+	if(pwd.value == "") {
+		result.innerHTML = "Please input your username";
 		return false;
 	}
 	return true;
 }
+/*check input email
+* format email
+* not null 
+*/
 function isEmail() {
 	var email = document.getElementById("email");
+	var result = document.getElementById("email-error");
+	result.innerHTML = "";
 	var regexEmail = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
 	if(!regexEmail.test(email.value)) {
-		document.getElementById("email-error").innerHTML = "Email wrong format";
+		result.innerHTML = "Email wrong format";
+		return false;
+	}
+	if(email.value == "") {
+		result.innerHTML = "Please input your username";
 		return false;
 	}
 	return true;
 }
+/*check input birthday
+* type format date
+*/
 function isDate(){
-	var birtday = document.getElementById("output-date");
+	var birthday = document.getElementById("output-date");
 	//case1 YYYY/MM/DD
-	var case1 = "(([0-9]{4})[-|/]([1-9]{1}|0[1-9]|1[0-2])[-|/]([1-9]{1}|0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1}))";
+	var case1 =  "(([0-9]{4})[-|/]([1-9]{1}|0[1-9]|1[0-2])[-|/]([1-9]{1}|0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1}))";
 	//case2 DD/MM/YYYY
 	var case2 = "(([1-9]{1}|0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1})[-|/]([1-9]{1}|0[1-9]|1[0-2])[-|/]([0-9]{4}))";
 	//case3 MM/DD/YYYY
 	var case3 = "(([1-9]{1}|0[1-9]|1[0-2])[-|/]([1-9]{1}|0[1-9]{1}|[1-2]{1}[0-9]{1}|3[0-1]{1})[-|/]([0-9]{4}))";
-	var regexDate = new RegExp(case1 + "|" + case2 + "|" + case3);
-	if(!regexDate.test(birtday.value)) {
-		document.getElementById(date-error).innerHTML = "Birthday wrong format";
+	var regexDate = new RegExp(case3);
+	var result = document.getElementById("date-error");
+	result.innerHTML = "";
+	console.log(regexDate.test(birthday.value));
+	if(!regexDate.test(birthday.value) || birthday.value == "") {
+		result.innerHTML = "Birthday wrong format";
 		return false;
 	}
 	return true;
 }
-//for form AJAX
-function load() {
-	var xhttp;
-	if (window.XMLHttpRequest) {
-	// code for modern browsers
-	xhttp = new XMLHttpRequest();
-	}else {
-	// code for IE6, IE5
-	xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+function clearForm() {
+	var input_list= document.getElementsByTagName("input");
+	var error_list = document.getElementsByClassName("result-validate");
+	for (var i =0; i<input_list.length; i++) {
+		input_list[i].value = "";
+		error_list[i].innerHTML = "";
 	}
-	xhttp.onreadystatechange = function() {
-	if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("demo").innerHTML = this.responseText;
-	}
-	};
-	xhttp.open("GET", "ajax_info.txt", true);
-	xhttp.send();
 }
