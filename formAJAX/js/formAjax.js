@@ -6,6 +6,8 @@
 function checkSubmit() {
 	var user_error = document.getElementById("user-error");
         var username = document.getElementById("user-name");
+	var pwd = document.getElementById("password");
+	var email = document.getElementById("email");
 	if(checkValidator()) {
 		var xhttp;
 		if (window.XMLHttpRequest) {
@@ -21,7 +23,8 @@ function checkSubmit() {
 			user_error.innerHTML = this.responseText;
 		}
 		};
-                xhttp.open("POST", "/WebAJAX/formAjax?username=" + username, true);
+                xhttp.open("POST", "/WebAJAX/formAjax?username=" + username.value 
+			   + "&password=" + pwd.value + "&email=" + email.value , true);
 		xhttp.send();
 	}
 }
