@@ -4,9 +4,9 @@
 * return correct/incorrect
 */
 function checkSubmit() {
-	var username = document.getElementById("user-name");
+	var user_error = document.getElementById("user-error");
+        var username = document.getElementById("user-name");
 	if(checkValidator()) {
-		console.log("success!!!");
 		var xhttp;
 		if (window.XMLHttpRequest) {
 			// code for modern browsers
@@ -17,11 +17,11 @@ function checkSubmit() {
 			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
 		}
 		xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			console.log(this.responseText);
+		if (this.readyState === 4 && this.status === 200) {
+			user_error.innerHTML = this.responseText;
 		}
 		};
-		xhttp.open("GET", "demo_validate.asp?t=" + username.innerHTML, true);
+                xhttp.open("POST", "/WebAJAX/formAjax?username=" + username, true);
 		xhttp.send();
 	}
 }
@@ -46,7 +46,7 @@ function isUserName() {
 	var result = document.getElementById("user-error");
 	result.innerHTML = "";
 	var regexUsername = new RegExp("^[a-zA-Z0-9]+([_ -]?[a-zA-Z0-9])*$");
-	if(username.value == "") {
+	if(username.value === "") {
 		result.innerHTML = "Please input your username";
 		return false;
 	}
@@ -67,7 +67,7 @@ function isPassword() {
 	var pwd = document.getElementById("password");
 	var result = document.getElementById("pwd-error");
 	result.innerHTML = "";
-	if(pwd.value == "") {
+	if(pwd.value === "") {
 		result.innerHTML = "Please input your password";
 		return false;
 	}
@@ -86,7 +86,7 @@ function isEmail() {
 	var result = document.getElementById("email-error");
 	result.innerHTML = "";
 	var regexEmail = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$");
-	if(email.value == "") {
+	if(email.value === "") {
 		result.innerHTML = "Please input your email";
 		return false;
 	}
@@ -111,8 +111,8 @@ function isDate(){
 	var result = document.getElementById("date-error");
 	result.innerHTML = "";
 	console.log(regexDate.test(birthday.value));
-	if(birthday.value == "") {
-		result.innerHTML = "Please input your email";
+	if(birthday.value === "") {
+		result.innerHTML = "Please input your date";
 		return false;
 	}
 	if(!regexDate.test(birthday.value)) {
