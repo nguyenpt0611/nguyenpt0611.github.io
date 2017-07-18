@@ -1,0 +1,58 @@
+body {
+    background: #e0e0e0; 
+}
+#form-login {
+    width: 600px;
+    margin: 0 auto;
+    padding: 5px auto;
+    text-align: center;
+}
+.label-field {
+    width: 100px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+}
+.form-fields {
+    margin:15px auto; 
+    font: 18px "Helvetica Neue", Helvatica, Arial, san-serif; 
+}
+.form-fields input {
+   width: 200px;
+   height: 25px;
+    padding-left: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border:1px solid #84C4EA;
+}
+.form-fields #input {
+    display: inline-block;
+}
+.form-fields span {
+    width: 200px;
+    display: inline-block;
+}
+.form-fields .result-validate {
+    font-size: 13px;
+    color: #FF4C31;
+    text-align: left;
+}
+#cal {
+    margin-top: 10px;
+    margin-left: 120px;
+}
+#btn-controll button {
+    width: 80px;
+    height: 30px;
+    background-color: #2471A3;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+     box-shadow:1px 1px 1px 1px #2471A3; 
+    -moz-box-shadow:1px 1px 1px 1px #2471A3; 
+    -webkit-box-shadow:1px 1px 1px 1px #2471A3; 
+    border:1px solid #84C4EA;
+}

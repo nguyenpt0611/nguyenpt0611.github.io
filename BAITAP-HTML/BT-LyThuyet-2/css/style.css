@@ -3,8 +3,8 @@ body {
 	margin-left: 0px;
 	margin-right: 0px;
 	font-family: Verdana, 'Arial', Helvetica, sans-serif;
+	font-size: 14px;
 	overflow: auto;
-	font-size: 14pt;
 }
 h2, h3, p {
 	margin: 0px;
@@ -31,7 +31,7 @@ h2 {
 /*our-product CSS*/
 #container #our-product{
 	height: 300px;
-	background: url('images/bg_home_intro.gif') repeat;
+	background: url('../images/bg_home_intro.gif') repeat;
 	border-top: 1px solid #474a51;
 }
 #container #our-product #product-content {
@@ -42,9 +42,9 @@ h2 {
 }
 #container #our-product h2 {
 	float: left;
+	font-family: "Courier", Helvetica, serif;
 	font-size: 22px;
 	color: #ffff00;
-  	font-family: "Courier", Helvetica, serif;
 	padding-top: 5px;
 }
 #container #our-product p {
@@ -86,7 +86,8 @@ h2 {
 	padding: 5px 130px;
 	padding-right: 0px;
 	margin-bottom: -30px;
-	background: url('images/home_services_bg_design.gif') right bottom no-repeat;overflow:hidden;
+	background: url('../images/home_services_bg_design.gif') right bottom no-repeat;
+	overflow:hidden;
 }
 #container #info-contact #second-col {
 	width: 385px;
@@ -94,16 +95,16 @@ h2 {
 	padding-bottom: 5px;
 	margin-top: 5px;
 	margin-left: 240px;
-	background: url('images/home_services_bg_marketing.gif') left top no-repeat;overflow:hidden;
+	background: url('../images/home_services_bg_marketing.gif') left top no-repeat;
+	overflow:hidden;
 }
 #container #info-contact  #first-col h2{
 	float: left;
+	font-family: "Courier", Helvetica, serif;
 	font-size: 20px;
 	color: #ffff00;
-  	font-family: "Courier", Helvetica, serif;
 	padding-top: 5px;
 }
-
 #container #info-contact #first-col p {
 	width: 382px;
 	float: left;	
@@ -112,12 +113,11 @@ h2 {
 }
 #container #info-contact  #second-col h2{
 	float: left;
+	font-family: "Courier", Helvetica, serif;
 	font-size: 20px;
 	color: #ffff00;
-  	font-family: "Courier", Helvetica, serif;
   	padding-top: 0px;
 }
-
 #container #info-contact #second-col p {
 	width: 382px;
 	float: left;	
@@ -127,9 +127,9 @@ h2 {
 /*page-footer CSS*/
 #container #page-footer {
 	height: 120px;
+	background-color: #24262a;
 	text-align: center;
 	border-top: 1px solid #474a51;	
-	background-color: #24262a;
 }
 #container #page-footer img {
 	padding-right: 80px;

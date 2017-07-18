@@ -1,0 +1,128 @@
+body{
+	width:500px;
+	margin:10px;
+	padding-left:3px;
+	font-family:Georgia, 'Times New Roman', arial, serif;
+}
+p{
+  	padding:0;
+  	margin:0;
+}
+a{
+  	color:#0d22ff;
+}
+.container{
+  	width:500px;
+  	border:1px solid #0033FF;
+  	overflow:auto;
+}
+/* Player-profile CSS */
+.container #title-player-profile{
+	height:25px;
+	background:url('../images/title_background.gif') repeat;
+	font-weight:bold;
+	line-height:25px;
+}
+.container #information{
+  	height:100px;
+  	margin-bottom:15px;
+  	line-height:18px;
+  	font-size:17px;
+}
+.container #information img{
+	float:left;
+ 	width:100px;
+ 	height:90px;
+}
+.container #information .player-profile-content{
+  	height:100%;
+	clear:right;
+	overflow:scroll;
+}
+/* Player-profile CSS */
+.container #title-facts{
+	margin-left:5px;
+  	font-size:17px;
+}
+.container .facts{
+	padding-left:40px;
+}
+.container .facts img{
+  	margin-right:5px;
+}
+.container #facts-containt ul,li{
+  	padding-right:10px;
+  	font-size:16px;
+  	line-height:18px;
+  	list-style:none;
+}
+/*Comment CSS*/
+.container #comment-wrap{
+	margin-top:50px;
+  	font-size:14px;
+}
+
+.container #comment-wrap .comment{
+	background:#ECECEC;
+  	margin-left:3px;
+  	margin-right:3px;
+  	padding:5px;
+}
+.container #comment-wrap .posted{
+  	padding-left:15px;
+  	font-size:13px;
+}
+.container #comment-wrap .posted img{
+	float:left;
+	margin-top:-7px;
+	margin-right:7px;
+}
+/* Comment-Form CSS */
+.container #comment-form{
+	margin-bottom:5px;
+	padding-top:20px;
+	font-size:14px;
+  	line-height:auto;
+}
+.container #comment-form .title-comment-form{
+	margin-bottom:-7px;
+	font-size:15px;
+	text-align:center;
+	font-weight:bold;
+}
+.container #comment-form .row{
+	margin: 0px;
+	padding: 0px;	
+}
+.container #comment-form .form-label{
+	width:21%;
+	float:left;
+	margin-left:5px;
+	padding-top:4px;
+	font-size:14px;
+}
+#comment-form .form-input{
+	width:auto;
+	margin-left:3px;
+	margin-top:5px;
+	padding-top:5px;
+}
+#comment-form .form-input input{
+	width:145px;
+	border:1px solid #BBB7B3;
+}
+.container #comment-form .row .form-comment-text{
+	width:99%;
+	margin-top:-42px;
+	padding-top:5px;
+}
+.container #comment-form .row .form-comment-text textarea[type="text"]{
+	padding:4px;
+}
+.container #comment-form .row .form-comment-text #area-comment{
+	width:375px;
+	height:90px;
+	resize:none;
+	font-family:Georgia, 'Times New Roman', Times, serif;
+	font-size:14px
+}

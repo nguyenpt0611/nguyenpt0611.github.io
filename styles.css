@@ -1,6 +1,9 @@
 body {
+  background:url('background.jpg') no-repeat;
+  background-attachment: fixed;
   padding: 0;
   margin: 0;
+  overflow: auto;
 }
 a:link {
     color: white; 
