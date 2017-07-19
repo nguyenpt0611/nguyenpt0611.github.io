@@ -37,16 +37,16 @@ function Monster(initX, initY, x, y, destX, destY, initToX, initToY, destroy, de
 	this.visible = visible; //boolean visible
 }
 
-// Monster.prototype.draw= function() {
-// 	//monster
+Monster.prototype.draw= function() {
+	//monster
 
-// 	img_monster.onload = function(){
-// 		//đặt hàm vẽ trong load của image
-// 		ctx.drawImage(img_monster, this.x, this.y);
-// 	};
-// 	//gán path sau khi load function được gọi
-	
-// }
+	img_monster.onload = function(){
+		//đặt hàm vẽ trong load của image
+		ctx.drawImage(img_monster, this.x, this.y);
+	};
+	//gán path sau khi load function được gọi
+	img_monster.src = "images/monster.png";
+}
 //Init object monster form class Monster
 var monster1 = new Monster(0, 0, 0, 0, 120, 120, 120, 120, false, 0, 0, false);
 var monster2 = new Monster(210, 0, 210, 0, 210, 120, 210, 120, false, 0, 0, false);
@@ -97,16 +97,17 @@ function update(time) {
 }
 window.onload = function(){
 	render();
-	// _reqAnimation = window.requestAnimationFrame ||
-	// 	    window.mozRequestAnimationFrame ||
-	// 	    window.webkitRequestAnimationFrame ||
-	// 	    window.msRequestAnimationFrame ||
-	// 	    window.oRequestAnimationFrame;
-	// if (_reqAnimation) {
-	// }
-	// else {
-	// 	alert("Your browser doesn't support requestAnimationFrame.");
-	// }
+	_reqAnimation = window.requestAnimationFrame ||
+		    window.mozRequestAnimationFrame ||
+		    window.webkitRequestAnimationFrame ||
+		    window.msRequestAnimationFrame ||
+		    window.oRequestAnimationFrame;
+	if (_reqAnimation) {
+		update();
+	}
+	else {
+		alert("Your browser doesn't support requestAnimationFrame.");
+	}
 };
 function render() {
 	/*----------  Menu canvas  ----------*/
@@ -187,23 +188,10 @@ function render() {
 
 	// var img_monster= new Image();
 	// img_monster.onload = function(){
-	// 	ctx.drawImage(img_monster,monster2.x,monster2.y);
+	// 	ctx.drawImage(img_monster,monster1.x,monster1.y);
 	// }
 	// img_monster.src = "images/monster.png";
 
-	//monster
-	
-	console.log(monster[i].x);
-	for(var i = 0; i < 8; i++){
-		var img_monster= new Image();
-		img_monster.onload = function(){
-			ctx.drawImage(img_monster,i*10,i*10);
-
-		}
-		img_monster.src = "images/monster.png";
-	
-	}
-	
 	/*----------  End Container canvas  ----------*/
 }
 
