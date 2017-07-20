@@ -1,0 +1,8 @@
+#bgcanvas, #maincanvas {
+	position:absolute;
+	z-index:-1;
+	margin-left: 425px;
+}
+body {
+	margin-: auto;
+}
