@@ -1,0 +1,100 @@
+<HTML>
+<head>
+    <title>Tripath Việt Nam</title>
+    <link rel="stylesheet" href="scss/contact.scss">
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+</head>
+<body class="tpvn-contact">
+    <div class="wrapper">
+        <div class="tpvn-main">
+            <div class="logo">
+                <a href="/" title="TPVN">TRIPATH
+                    <span class="logo-text">VIET NAM</span>
+                </a>
+            </div>
+            <div class="language-option" style="background: url(<%= asset_path 'selectLang.png' %>)no-repeat 75px 7px;">
+                <a class="selectLang" href="javascript:;">Vietnamese</a>
+                <ul class="languageTab">
+                    <li>
+                        <a href="#">Vietnamese</a>
+                    </li>
+                    <li>
+                        <a href="#">English</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="organization-content">
+                <div class="about-us">
+                    <div class="title">About us</div>
+                    <div class="category-text">Overview & Organization</div>
+                </div>
+                <div class="work">
+                    <div class="title">Work</div>
+                    <div class="category-text">Bussiness area</div>
+                </div>
+                <div class="contact">
+                    <div class="title">Contact</div>
+                    <div class="category-text">Get in touch</div>
+                </div>
+            </div>
+            <div class="contact-banner" style="background: url(<%= asset_path 'organizationBg.png' %>)no-repeat;">
+                Banner
+            </div>
+            <div class="vietnam-offices">
+                <div class="office-box hn-office">
+                    <div class="office-title">
+                        HN OFFICE
+                    </div>
+                    <ul class="office-details">
+                        <li class="mail-details">
+                            <span class="mail-lbl">m:</span>
+                            <p class="officemail">
+                                contact@tripath.vn
+                            </p>
+                        </li>
+                        <li class="tel-details">
+                            <span class="tel-lbl">t:</span>
+                            <p class="office-telephone">
+                                +84 243 244 4565
+                            </p>
+                        </li>
+                        <li class="address-details">
+                            <span class="address-lbl">a:</span>
+                            <p class="office-address">
+                                R. 2610, 26th Floor, West Wing, Lotte Center Hanoi
+                                54 Dao Tan, Lieu Giai, Ba Dinh
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="office-box hcm-office">
+                    <div class="office-title">
+                        HCM OFFICE
+                    </div>
+                    <ul class="office-details">
+                        <li class="tel-details">
+                            <span class="tel-lbl">t:</span>
+                            <p class="office-telephone">
+                                +84 28 38364438
+                            </p>
+                        </li>
+                        <li class="address-detail">
+                            <span class="address-lbl">a:</span>
+                            <p class="office-address">
+                                30 Co Bac, Cau Ong Lanh, District 1. Ho Chi Minh City
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.selectLang').click(function() {
+            $( ".languageTab" ).toggle( "slow", function() {
+                // Animation complete.
+            });
+        })
+    </script>
+</body>
+</HTML>
